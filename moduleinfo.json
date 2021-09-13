@@ -1,0 +1,16 @@
+{
+    "name": "Automatische Suchvorschläge nach Tippfehlern",
+    "archiveName": "modifiedcommunitymodules/fuzzy-search",
+    "sourceDir": "new_files",
+    "version": "auto",
+    "shortDescription": "Meinten Sie vielleicht.... ?",
+    "description": "Wenn ein Kunde sich vertippt hat bzw nicht die genaue Schreibweise kennt, sucht dieses Modul nach passenden Begriffen in der Datenbank, die Ähnlich geschrieben werden. Dem Kunden werden dann verschiedene Produkte angeboten mit dem Vorschlag: \"Meinten Sie vielleicht .....",
+    "price": "free",
+    "require": {
+        "composer/autoload": "^1.1.0",
+        "robinthehood/modified-std-module": "^0.1.0"
+    },
+    "modifiedCompatibility": [
+        "2.0.5.0","2.0.5.1","2.0.6.0"
+    ]
+}

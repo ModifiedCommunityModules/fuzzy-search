@@ -1,0 +1,36 @@
+<?php
+define('MODULE_MCM_SEARCH_ACTIVATE_SUGGEST_TITLE','Fehlertolerante Suche aktivieren');
+define('MODULE_MCM_SEARCH_ACTIVATE_SUGGEST_DESC','Vorschl&auml;ge zu Suchbegriffen und &auml;hnlichen Produkten bei erfolgloser Suche aktivieren / deaktivieren');
+define('MODULE_MCM_SEARCH_PRODUCT_KEYWORDS_TITLE','Extra Keywords einbeziehen');
+define('MODULE_MCM_SEARCH_PRODUCT_KEYWORDS_DESC','Bezieht das Extra Feld "Zusatz-Begriffe für Suche" mit ein.');
+define('MODULE_MCM_SEARCH_PRODUCT_DESCRIPTION_TITLE','Produktbeschreibungen mit einbeziehen');
+define('MODULE_MCM_SEARCH_PRODUCT_DESCRIPTION_DESC','Durchsucht die Produktbeschreibung und die Produkt-Kurzbeschreibung nach ähnlichen Begriffen.<br /><b style="color:red">Vorsicht: Diese Option ist nur für Shops mit geringen Produktmengen geeignet!</b>');
+define('MODULE_MCM_SEARCH_PROXIMITY_TRIGGER_TITLE','Aktivieren ab &Uuml;bereinstimmung in %');
+define('MODULE_MCM_SEARCH_PROXIMITY_TRIGGER_DESC','Ab wieviel % &Uuml;bereinstimmung sollen Vorschl&auml;ge angezeigt werden? <br /><b>Standard = 70</b>');
+define('MODULE_MCM_SEARCH_WEIGHT_LEVENSHTEIN_TITLE','LEVENSHTEIN-Faktor in % (0-100)');
+define('MODULE_MCM_SEARCH_WEIGHT_LEVENSHTEIN_DESC','Welchen Anteil soll die LEVENSHTEIN-Funktion an der Berechnung der &Uuml;bereinstimmung erhalten?<br /><span style="color:red"><b><u>Hinweise zum Laufzeitverhalten:</u></b> die Nutzung mehrerer Funktionen erh&ouml;ht die Laufzeit! Bei Problemen mit zu langer Laufzeit am Besten nur eine Fukntion nutzen. <br/>Alle drei Funktionen sollten addiert 100% ergeben, also z.B. 40%-40%-20%.</span> <br /><b>Standard = 0</b>');
+define('MODULE_MCM_SEARCH_WEIGHT_SIMILAR_TEXT_TITLE','SIMILAR-TEXT-Faktor in % (0-100)');
+define('MODULE_MCM_SEARCH_WEIGHT_SIMILAR_TEXT_DESC','Welchen Anteil soll die SIMILAR-TEXT-Funktion an der Berechnung der &Uuml;bereinstimmung erhalten? <br />Hinweise siehe LEVENSHTEIN!<br /><b>Standard = 100</b>');
+define('MODULE_MCM_SEARCH_WEIGHT_METAPHONE_TITLE','METAPHONE-Faktor in % (0-100)');
+define('MODULE_MCM_SEARCH_WEIGHT_METAPHONE_DESC','Welchen Anteil soll die METAPHONE-Funktion an der Berechnung der &Uuml;bereinstimmung erhalten? <br />Hinweise siehe LEVENSHTEIN!<br /><b>Standard = 0</b>');
+define('MODULE_MCM_SEARCH_SPLIT_MINIMUM_LENGTH_TITLE','Ignorierte Wortl&auml;nge');
+define('MODULE_MCM_SEARCH_SPLIT_MINIMUM_LENGTH_DESC','W&ouml;rter werden ignoriert, wenn kurz oder k&uuml;rzer als der Wert.<br /><span style="color:red"><b><u>Hinweise zum Laufzeitverhalten:</u></b> Bei Problemen mit zu langer Laufzeit kann der Wert auf 4 oder 5 erh&ouml;ht werden, wenn Sie keine relevanten Begriffe dieser Wortl&auml;nge im Shop haben.</span><br /> <b>Standard = 3</b>');
+define('MODULE_MCM_SEARCH_SPLIT_PRODUCT_NAMES_TITLE','Produktnamen teilen');
+define('MODULE_MCM_SEARCH_SPLIT_PRODUCT_NAMES_DESC','Sollen Produktnamen an bestimmten Stellen geteilt und getrennt untersucht werden? <br /><span style="color:red"><b><u>Hinweise zum Laufzeitverhalten:</u></b> Deaktivieren schont die Laufzeit, findet aber weniger Begriffe</span><br />Diese Einstellung wird ignoriert, wenn Keywords und/oder Produktbeschreibungen einbezogen werden!<br /><b>Standard = true</b>');
+define('MODULE_MCM_SEARCH_SPLIT_PRODUCT_CHARS_TITLE','Trennzeichen zur Teilung');
+define('MODULE_MCM_SEARCH_SPLIT_PRODUCT_CHARS_DESC','an welchen Zeichen sollen die Produktnamen zerlegt werden? Die gew&uuml;nschten Zeichen sind in eckige Klammern zu setzen.<br />Beispiele: [ ] oder [-] oder [ -] oder [ /-]<br /><b>Standard = [ ]</b>');
+define('MODULE_MCM_SEARCH_MAX_KEXWORD_SUGGESTS_TITLE','Anzahl der Suchbegriff-Vorschl&auml;ge');
+define('MODULE_MCM_SEARCH_MAX_KEXWORD_SUGGESTS_DESC','Wieviele Suchbegriffe sollen maximal vorgeschlagen werden? <br /><b>Standard = 6</b>');
+define('MODULE_MCM_SEARCH_COUNT_PRODUCTS_TITLE','Produkte zu Vorschl&auml;gen z&auml;hlen');
+define('MODULE_MCM_SEARCH_COUNT_PRODUCTS_DESC','Soll die Anzahl der Produkte, die ein vorgeschlagener Suchbegriff findet angezeigt werden?<br /><span style="color:red"><b><u>Hinweise zum Laufzeitverhalten:</u></b> Kann in Kombination mit vielen Suchbegriffvorschl&auml;gen die Laufzeit verl&auml;ngern. Bei Problemen deaktivieren.</span> <br /><b>Standard = true</b>');
+define('MODULE_MCM_SEARCH_ENABLE_PROXIMITY_COLOR_TITLE','Farbwerte f&uuml;r &Uuml;bereinstimmung aktivieren');
+define('MODULE_MCM_SEARCH_ENABLE_PROXIMITY_COLOR_DESC','Soll die Anzeige der Relevanz (&Uuml;bereinstimmung) mit Farben unterst&uuml;tzt werden? <br/> <b>Standard = true</b>');
+define('MODULE_MCM_SEARCH_PROXIMITY_COLORS_TITLE','Farbwerte');
+define('MODULE_MCM_SEARCH_PROXIMITY_COLORS_DESC','Angabe der Farbwerte mit Semikolon getrennt. Der erste Farbwert wird bei &Uuml;bereinstimmungen zwischen 90% und 100% angezeigt, der zweite von 80% - 89% etc. <br/><b>Standard = #9f6;#cf6;#ff6;#fc9;#f99</b>');
+define('MODULE_MCM_SEARCH_ENABLE_PRODUCTS_SUGGEST_TITLE','Produktvorschl&auml;ge aktivieren');
+define('MODULE_MCM_SEARCH_ENABLE_PRODUCTS_SUGGEST_DESC','Sollen zus&auml;tzlich relevante Produkte angezeigt werden?<br /><span style="color:red"><b><u>Hinweise zum Laufzeitverhalten:</u></b> Bei Problemen mit der Laufzeit, diese Option deaktivieren oder zumindest die Anzahl der vorgeschlagenen Produkte verringern</span><br/><b>Standard = true</b>');
+define('MODULE_MCM_SEARCH_MAX_PRODUCTS_SUGGEST_TITLE','Maximale Produktvorschl&auml;ge');
+define('MODULE_MCM_SEARCH_MAX_PRODUCTS_SUGGEST_DESC','Wieviele Produktvorschl&auml;ge sollen maximal angezeigt werden? <br/><b>Standard = 15</b>');
+define('MODULE_MCM_SEARCH_SHOW_PARSETIME_TITLE','Ausgabe der Parsetime');
+define('MODULE_MCM_SEARCH_SHOW_PARSETIME_DESC','Zu Test- und Einrichtungszwecken kann die Parsetime der fehlertoleranten Suche ausgegeben werden. F&uuml;r den produktiven Betrieb sollte diese Funktion abgestellt werden!');
+?>
