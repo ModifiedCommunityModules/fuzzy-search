@@ -1,24 +1,111 @@
-{config_load file="$language/lang_$language.conf" section="suggest_products"} 
-<div class="row" style="padding: 10px;">
-  <h1 class="h5">{#heading_text#}</h1>
-  <br />
-  {foreach name=aussen item=module_data from=$module_content}
-    <div class="col-sm-6 col-md-4" style="margin-bottom: 20px; border-bottom: 1px solid #ddd;">
-      <div style="background-color:{$module_data.PRODUCTS_PROXIMITY_COLOR}">{#text_proximity#}{$module_data.PRODUCTS_PROXIMITY}</div>
-      <div class="thumbnail" style="margin-bottom: 0;" data-col="{$smarty.foreach.aussen.iteration}">
-			  <div class="equalize products_image_block">
-          <div class="equalize products_name_block">
-            <b><a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></b><br />
-          </div>
-          {if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" /></a>{/if}<br />
+{config_load file="$language/lang_$language.conf" section="suggest_products"}
+
+{if $keyword_data}
+    <style>
+        .fuzzy-keyword-list {
+            width: auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+        }
+        .fuzzy-keyword-proximity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px 5px;
+        }
+    </style>
+
+    <div class="fuzzy-keyword-list">
+ 		<br>
+ 		<br>
+ 		<strong>{#heading_keyword_suggest#}</strong><br><br>
+ 		<table>
+ 		{foreach name=outer item=options_data from=$keyword_data}
+ 			<tr>
+ 				<td style="width: 5%;">
+ 					<span class="fuzzy-keyword-proximity" style="background-color: {$options_data.SUGGEST_COLOR}">
+ 					    ({$options_data.SUGGEST_PROXIMITY})
+                    </span>
+ 				</td>
+ 				<td>
+ 				    <a href="{$options_data.SUGGEST_LINK}">
+ 						<strong>{$options_data.SUGGEST_KEYWORD}</strong>
+ 					</a>
+ 				<td>
+ 					<span>({#text_found_products#} {$options_data.SUGGEST_COUNT})</span>
+ 				</td>
+ 			</tr>
+ 		{/foreach}
+ 		</table>
+ 	</div>
+    <br><br>
+{/if}
+
+{if $module_content}
+    <style>
+        .fuzzy-search-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .fuzzy-search-list-heading {
+            width: 100%;
+        }
+        .fuzzy-search-product-name {
+            font-size: 1rem;
+            padding: 5px 0 10px 0;
+        }
+        .fuzzy-search-list-heading span {
+            padding: 15px 0;
+            font-size: 1.4rem;
+        }
+        .fuzzy-search-product {
+            width: 350px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+
+    <div class="fuzzy-search-list">
+        <div class="fuzzy-search-list-heading">
+            <span>{#heading_text#}</span>
+            <hr>
+            <br>
         </div>
-      </div>
-      <div class="caption" data-col="{$smarty.foreach.aussen.iteration}">
-        <div class="equalize products_short_description_block">
-          {if $module_data.CATEGORIES_NAME}{#text_category#}<a href="{$module_data.CATEGORIES_LINK}">{$module_data.CATEGORIES_NAME}</a><br />{/if}
-          <strong>{$module_data.PRODUCTS_PRICE} </strong><br /><small>{$module_data.PRODUCTS_TAX_INFO}{$module_data.PRODUCTS_SHIPPING_LINK} </small>
-        </div>
-      </div>
+        <br>
+        {foreach name=aussen item=module_data from=$module_content}
+            <div class="fuzzy-search-product">
+                <div style="background-color:{$module_data.PRODUCTS_PROXIMITY_COLOR}">{#text_proximity#}{$module_data.PRODUCTS_PROXIMITY}</div>
+                <div data-col="{$smarty.foreach.aussen.iteration}">
+                    <div class="fuzzy-search-product-image-block">
+                        <div class="fuzzy-search-product-name">
+                            <strong><a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></strong>
+                            <br>
+                        </div>
+                        {if $module_data.PRODUCTS_IMAGE}
+                            <a href="{$module_data.PRODUCTS_LINK}">
+                                <img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" />
+                            </a>
+                        {/if}
+                        <br>
+                    </div>
+                </div>
+                <div data-col="{$smarty.foreach.aussen.iteration}">
+                    <div class="fuzzy-search-product-short-description-block">
+                        {if $module_data.CATEGORIES_NAME}
+                            {#text_category#}
+                            <a href="{$module_data.CATEGORIES_LINK}">{$module_data.CATEGORIES_NAME}</a>
+                            <br>
+                        {/if}
+                        <strong>{$module_data.PRODUCTS_PRICE} </strong>
+                        <br>
+                        <small>{$module_data.PRODUCTS_TAX_INFO}{$module_data.PRODUCTS_SHIPPING_LINK} </small>
+                    </div>
+                </div>
+            </div>
+        {/foreach}
     </div>
-  {/foreach}
-</div>
+{/if}
+{if $PARSE_TIME}{$PARSE_TIME} {/if}
